@@ -187,7 +187,7 @@
         <input type="submit" name="val" value="6" class="global">
 
 
-        <input type="submit" name="val" value="X" class="global">
+        <input type="submit" name="val" value="*" class="global">
 
     </div>
     <div class="fourth-row">

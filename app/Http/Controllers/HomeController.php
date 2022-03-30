@@ -9,7 +9,16 @@ class HomeController extends Controller
     public function index(Request $request){
         $data=$request->result;
         $value=$request->val;
-        $data.=$value;
+
+        if($value=="="){
+            $string = $data;
+            $math_string ="return ".$string.";";
+            $data = eval($math_string);
+
+        }else{
+            $data.=$value;
+        }
+
         if($value=="Del"){
             $data="";
         }
