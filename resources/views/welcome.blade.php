@@ -39,10 +39,14 @@
             font-size: 24px;
             padding: 24px 5px;
             font-weight: 700;
+
             text-align: right;
-            width: 96%;
-            border: none;
+            width: 94%;
+            height: 5px;
+
             background-color: #F8F8F8;
+            margin: 2px auto;
+            border: 1px solid blue;
         }
         .first-row,
         .second-row,
@@ -57,13 +61,18 @@
             padding: 15px;
             font-weight: bold;
             font-size: 16px;
-            border: none;
+
+            border: 2px solid gray;
             border-radius: 3px;
             background-color: #F2F2F2;
             float: left;
             width: 23.5%;
             margin: 0 2px;
             /*border: 1px solid #000;*/
+        }
+        .global:hover{
+            border: 2px solid blueviolet;
+            background-color: #668bd8;
         }
         .conflict .left,
         .conflict .right{
@@ -80,7 +89,7 @@
             padding: 15px;
             font-weight: bold;
             font-size: 16px;
-            border: none;
+            border: 2px solid gray;
             border-radius: 3px;
             background-color: #F2F2F2;
             float: left;
@@ -91,12 +100,20 @@
             padding: 15px;
             font-weight: bold;
             font-size: 16px;
-            border: none;
+            border: 2px solid gray;
             border-radius: 3px;
             background-color: #F2F2F2;
             float: left;
             width: 31.5%;
             margin: 0 2px;
+        }
+        .small:hover{
+            border: 2px solid blueviolet;
+            background-color: #668bd8;
+        }
+        .big:hover{
+            background-color: #668bd8;
+            border: 2px solid blueviolet;
         }
         .plus{
             height: 105px;
@@ -127,85 +144,89 @@
 <br>
 <div class="container">
     <div class="header">Calculator with PHP</div>
-    <input type="text" class="result">
+    <form action="" method="post">
+        @csrf
+    <input type="text" name="result" value="<?php if (isset($data)) echo $data?>" class="result">
 
     <div class="first-row">
-        <form action="">
-        <input type="button" name="" value="&radic;" class="global">
-        </form>
-        <form action="">
-        <input type="button" name="" value="(" class="global">
-        </form>
-        <form action="">
-        <input type="button" name="" value=")" class="global">
-        </form>
-        <form action="">
-        <input type="button" name="" value="%" class="global">
-        </form>
+
+        <input type="submit" name="val" value="&radic;" class="global">
+
+
+        <input type="submit" name="val" value="(" class="global">
+
+
+        <input type="submit" name="val" value=")" class="global">
+
+
+        <input type="submit" name="val" value="%" class="global">
+
     </div>
     <div class="second-row">
-        <form action="">
-        <input type="button" name="" value="7" class="global">
-        </form>
-        <form action="">
-        <input type="button" name="" value="8" class="global">
-        </form>
-        <form action="">
-        <input type="button" name="" value="9" class="global">
-        </form>
-        <form action="">
-        <input type="button" name="" value="/" class="global">
-        </form>
+
+        <input type="submit" name="val" value="7" class="global">
+
+
+        <input type="submit" name="val" value="8" class="global">
+
+
+        <input type="submit" name="val" value="9" class="global">
+
+
+        <input type="submit" name="val" value="/" class="global">
+
     </div>
     <div class="third-row">
-        <form action="">
-        <input type="button" name="" value="4" class="global">
-        </form>
-        <form action="">
-        <input type="button" name="" value="5" class="global">
-        </form>
-        <form action="">
-        <input type="button" name="" value="6" class="global">
-        </form>
-        <form action="">
-        <input type="button" name="" value="X" class="global">
-        </form>
+
+        <input type="submit" name="val" value="4" class="global">
+
+
+        <input type="submit" name="val" value="5" class="global">
+
+
+        <input type="submit" name="val" value="6" class="global">
+
+
+        <input type="submit" name="val" value="X" class="global">
+
     </div>
     <div class="fourth-row">
-        <form action="">
-        <input type="button" name="" value="1" class="global">
-        </form>
-        <form action="">
-        <input type="button" name="" value="2" class="global">
-        </form>
-        <form action="">
-        <input type="button" name="" value="3" class="global">
-        </form>
-        <form action="">
-        <input type="button" name="" value="-" class="global">
-        </form>
+
+        <input type="submit" name="val" value="1" class="global">
+
+
+        <input type="submit" name="val" value="2" class="global">
+
+
+        <input type="submit" name="val" value="3" class="global">
+
+
+        <input type="submit" name="val" value="-" class="global">
+
     </div>
     <div class="conflict">
         <div class="left">
-            <form action="">
-            <input type="button" name="" value="0" class=" big">
-            </form>
-            <form action="">
-            <input type="button" name="" value="." class=" small">
-            </form>
-            <form action="">
-            <input type="button" name="" value="Del" class=" red small white-text top-margin">
-            </form>
-            <form action="">
-            <input type="button" name="" value="=" class=" green white-text big top-margin">
-            </form>
+
+            <input type="submit" name="val" value="0" class=" big">
+
+
+            <input type="submit" name="val" value="." class=" small">
+
+
+            <input type="submit" name="val" value="Del" class=" red small white-text top-margin">
+
+
+            <input type="submit" name="val" value="=" class=" green white-text big top-margin">
+
         </div>
         <div class="right">
-            <form action="">
-            <input type="button" name="" value="+" class="global grey plus">
-            </form>
+
+            <input type="submit" name="val" value="+" class="global grey plus">
+
         </div>
+
     </div>
+    </form>
 </div>
 </body>
 </html>
